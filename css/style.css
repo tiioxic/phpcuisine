@@ -1,0 +1,290 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+:root {
+  --clr-bg: linear-gradient(#141e30, #243b55);
+  --clr-primary: #03e9f4;
+  --clr-secondary: #c8d6f4;
+  --clr-accent: #EC8C69;
+  --clr-text: #ffffff;
+}
+
+body {
+  background: var(--clr-bg);
+  min-height: 100vh;
+
+  /* color: var(--clr-text); */
+}
+
+/* header */
+header {
+  position: absolute;
+
+}
+
+header nav {
+  position: fixed;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3rem;
+  width: fit-content;
+  padding: 0 5rem 0rem 5rem;
+  background-color: transparent;
+  margin: 0 auto;
+  border-radius: 200px;
+  background: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(10px);
+
+}
+
+header nav ul li a {
+  padding: .5rem 1rem .5rem 1rem;
+}
+
+header nav ul li a:hover {
+  background-color: var(--clr-primary);
+  opacity: 90%;
+  border-radius: 200px;
+  color: #000;
+  box-shadow: 0 0 1px var(--clr-primary),
+    0 0 12.5px var(--clr-primary),
+    0 0 25px var(--clr-primary),
+    0 0 50px var(--clr-primary);
+}
+
+/* fin header */
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+main {
+  text-align: center;
+  margin-top: 5rem;
+
+}
+
+
+ul,
+li a {
+  list-style: none;
+  color: var(--clr-text);
+  text-decoration: none;
+}
+
+
+
+/* page publication recette */
+/* mise en form de la div du form */
+.form_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, .5);
+  box-shadow: 0 15px 25PX rgba(0, 0, 0, .6);
+  border-radius: 10px;
+}
+
+
+.form_box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.form_box .input_form {
+  position: relative;
+}
+
+/* mise en forme des inputs */
+.form_box .input_form input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #fff;
+  /* chech mdn */
+  outline: none;
+  background: transparent;
+}
+
+.form_box .input_form label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.input_file_form input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  
+  margin-bottom: 30px;
+  border: none;
+  /* chech mdn */
+  outline: none;
+  background: transparent;
+}
+
+
+/* check mdn */
+.form_box .input_form input:focus~label{
+/* .form_box .input_form input:valid~label { */
+  top: -20px;
+  left: 0;
+  color: var(--clr-primary);
+  font-size: 12px;
+}
+
+
+.form_box form div {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: var(--clr-primary);
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+.form_box div{
+  cursor: pointer;
+}
+.form_box div button {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+
+}
+
+.form_box div:hover {
+  background: var(--clr-primary);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--clr-primary),
+    0 0 25px var(--clr-primary),
+    0 0 50px var(--clr-primary),
+    0 0 100px var(--clr-primary);
+}
+
+/* modifie le champs de saisie publication  */
+#contenu{
+  height: 100px;
+  border-bottom: 1px solid #fff;
+  border-top: none;
+}
+
+/* mise en forme de leffet avec les span */
+.form_box div span {
+  position: absolute;
+  display: blockS;
+}
+
+.form_box div span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--clr-primary));
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.form_box div span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--clr-primary));
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.form_box div span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--clr-primary));
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.form_box div span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--clr-primary));
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
