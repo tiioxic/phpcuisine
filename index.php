@@ -1,5 +1,7 @@
 <?php
-    require "partials/header.php"
+    require "partials/header.php";
+    $sql = "SELECT r.*, u.* FROM recette r JOIN user u ON r.idUser = u.idUser";
+    $recettes = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     ?>
 <section>
 
@@ -8,14 +10,20 @@
     <h2>Liste des recettes</h2>
     
      <div>
-        <?php foreach ($recettes as $recette) { ?> 
-        <img src="<?php echo $recette["img"] ?>" alt="">
+          <?php 
+        foreach ($recettes as $recette) {
+            ?>
+        <img src="./imgRecette/<?php echo $recette['img'] ?>" alt="....">
            <h2>
-            <?php echo $recette["titre"] ?>
+            <?php echo $recette['titre'] ?>
         </h2>
      </div>
-     <?php } ?>
-    
+        <?php }
+    ?> 
     
  
 </section>
+
+<?php
+require "partials/footer.php";
+?>

@@ -35,9 +35,9 @@ if (!isset($_SESSION['user'])) {
 
        $image_recette = $_FILES['img']['name'];
         $sql = $db->prepare(
-            "INSERT INTO recette(img,titre,contenu)
+            "INSERT INTO recette(img,titre,contenu,idUser)
                 VALUE
-            (:img,:titre,:contenu)"
+            (:img,:titre,:contenu,:auteur)"
         );
         $sql->bindValue(":img",$image_recette);
         $sql->bindValue(":titre",$_POST["titre"]);

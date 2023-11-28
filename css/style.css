@@ -29,6 +29,11 @@ header {
 
 }
 
+.imgAvatar{
+  width: 50%;
+  border-radius: 200px;
+}
+
 header nav {
   position: fixed;
   top: 3%;
@@ -59,6 +64,8 @@ header nav ul li a:hover {
     0 0 25px var(--clr-primary),
     0 0 50px var(--clr-primary);
 }
+
+
 
 /* fin header */
 

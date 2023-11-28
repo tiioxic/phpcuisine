@@ -12,8 +12,15 @@ require "db.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Recette</title>
+    <style>
+      .imgAvatar{
+        width: 3rem;
+        border-radius: 200px;
+
+      }
+    </style>
 </head>
 
 <body>
@@ -29,7 +36,7 @@ require "db.php";
               
               echo "Bienvenue"." ".$_SESSION['user']['pseudo'];
             ?>
-              <img src="<?php echo $_SESSION['user']['avatar']?>" alt="profile">
+              <img src="./avatar/<?php echo $_SESSION['user']['avatar']?>" class="imgAvatar" alt="profile">
             <?php  
               echo "
                 <li><a href='logout.php'>Se deconnecter</a></li>
